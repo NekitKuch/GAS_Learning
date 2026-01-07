@@ -2,6 +2,16 @@
 
 
 #include "Character/AuraEnemy.h"
+#include "AbilitySystem/AuraAbilitySystemComponent.h"
+#include "AbilitySystem/AuraAttributeSet.h"
+
+AAuraEnemy::AAuraEnemy()
+{
+	AbilitySystemComponent = CreateDefaultSubobject<UAuraAbilitySystemComponent>("Ability System Component");
+	AbilitySystemComponent->SetIsReplicated(true);
+
+	AttributeSet = CreateDefaultSubobject<UAuraAttributeSet>("AttributeSet");
+}
 
 void AAuraEnemy::HighlightActor()
 {
